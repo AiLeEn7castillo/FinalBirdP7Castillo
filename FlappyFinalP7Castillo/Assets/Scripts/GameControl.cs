@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
@@ -9,7 +10,7 @@ public class GameControl : MonoBehaviour
 {
     public static GameControl instance;
     public GameObject gameOverText;
-    public Text scoreText;
+    public TextMeshProUGUI ScoreText;
     public bool gameOver = false;
     public float scrollspeed = -1.5f;
 
@@ -21,7 +22,8 @@ public class GameControl : MonoBehaviour
         if (instance == null)
         {
             instance = this;
-        }else if (instance != this)
+        }
+        else if (instance != this)
         {
             Destroy(gameObject);
         }
@@ -43,7 +45,7 @@ public class GameControl : MonoBehaviour
             return;
         }
         score++;
-        scoreText.text = "Score " + score.ToString();
+        ScoreText.text = "Score " + score.ToString();
     }
     public void BirdDied()
     {
