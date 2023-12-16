@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bird : MonoBehaviour
+public class Bird : MonoBehaviour
 { 
     public float upForce = 200f;
 
     private bool isDead = false;
     private Rigidbody2D rb2d;
     private Animator anim;
+
+    AudioSource audioSource;
+    public AudioClip scoreSound;
+    public AudioClip deathSound;
+    public AudioClip flySound;
 
 
     // Start is called before the first frame update

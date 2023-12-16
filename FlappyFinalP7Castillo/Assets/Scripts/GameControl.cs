@@ -5,6 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using JetBrains.Annotations;
 
 public class GameControl : MonoBehaviour
 {
@@ -15,6 +16,11 @@ public class GameControl : MonoBehaviour
     public float scrollspeed = -1.5f;
 
     private int score = 0;
+    private AudioClip deathSound;
+    private AudioClip scoreSound;
+    private object animator;
+
+    public object audioSource { get; private set; }
 
     // Start is called before the first frame update
     void Awake()
